@@ -23,7 +23,7 @@
       position: relative;
       text-align: center;
       color: white;
-      background: black;
+      background: #85c0d6;
       padding: 3rem 1rem;
       border-bottom-left-radius: 2rem;
       border-bottom-right-radius: 2rem;
@@ -52,7 +52,7 @@
     header p {
       font-size: 1rem;
       margin-top: 0.5rem;
-      color: #ccc;
+      color: #3d3d3d;
     }
 
     .countdown {
@@ -84,51 +84,42 @@
       padding: 1rem;
     }
 
-    .volantino img {
-      width: 100%;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .video-box {
-      display: block;
-      line-height: 0; /* elimina spazi causati dal line-height */
+    .volantino {
+      height: 95vh;
       overflow: hidden;
-    }
-
-    .video-box video {
-      display: block; /* elimina lo spazio sotto causato dal comportamento inline */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
       margin: 0;
-      padding: 0;
     }
+
+    .volantino img {
+      max-width: 95vw; /* Limita la larghezza al 95% della larghezza del dispositivo */
+      max-height: 95vh; /* Limita l'altezza al 95% dell'altezza del dispositivo */
+      width: 100%; /* Imposta la larghezza al 100% per adattarsi alla larghezza disponibile */
+      height: 100%; /* Imposta l'altezza al 100% per adattarsi all'altezza disponibile */
+      object-fit: contain;
+      display: block;
+    }
+
     .reel {
-      margin-top: 1rem;
-      border: 4px solid #ec4899;
-      border-radius: 2rem;
+      height: 95vh;
       overflow: hidden;
-      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       padding: 0;
+      margin: 0;
     }
 
     .reel video {
-      width: 100%;
-      height: 95vh;
-      object-fit: cover;
+      max-width: 95vw; /* Limita la larghezza al 95% della larghezza del dispositivo */
+      max-height: 95vh; /* Limita l'altezza al 95% dell'altezza del dispositivo */
+      width: 100%; /* Imposta la larghezza al 100% per adattarsi alla larghezza disponibile */
+      height: 100%; /* Imposta l'altezza al 100% per adattarsi all'altezza disponibile */
+      object-fit: contain;
       display: block;
-      margin: 0;
-      padding: 0;
-    }
-
-    .reel::before {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: #ec4899;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.75rem;
-      font-weight: bold;
-      border-radius: 999px;
     }
 
     .info {
@@ -152,17 +143,40 @@
       text-decoration: underline;
     }
 
-    .sponsor {
-      background: #fefcf3;
-      padding: 2rem 1rem;
-      border-top: 1px solid #ddd;
+    footer {
+      background-color: rgba(255, 255, 255);
+      padding: 20px;
       text-align: center;
+      width: 100%;
+      color: #333;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
     }
 
-    .sponsor img {
-      height: 40px;
-      margin: 0.5rem;
+    footer p {
+      width: 100%; /* Fa sì che il paragrafo occupi l'intera larghezza disponibile */
+      margin-bottom: 10px; /* Aggiunge un po' di spazio sotto il testo */
     }
+
+    .sponsor-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centra i loghi */
+      gap: 10px; /* Aggiunge uno spazio tra le immagini */
+    }
+
+    footer img {
+      max-height: 50px;
+      height: auto;
+      max-width: 100%;
+    }
+
   </style>
 </head>
 <body>
@@ -181,15 +195,9 @@
     </div>
   </section>
 
-  <section class="section volantino">
-    <img src="images/volantino.jpeg" alt="Volantino Note Libere">
-  </section>
-
-  <section class="section">
-    <div class="reel">
-        <div class="video-box">
-            <video src="media/berna-dj.mp4" autoplay muted playsinline loop controls></video>
-        </div>
+  <section>
+    <div class="volantino">
+        <img src="images/volantino.jpeg" alt="Volantino Note Libere">
     </div>
   </section>
 
@@ -222,10 +230,22 @@
     </div>
   </section>
 
-  <footer class="sponsor">
+  <section class="section">
+    <div class="reel">
+        <video src="media/berna-dj.mp4" autoplay muted playsinline loop controls></video>
+    </div>
+  </section>
+
+  <footer>
     <p>Con il supporto di:</p>
-    <img src="sponsor/logo1.png" alt="Sponsor 1">
-    <img src="sponsor/logo2.png" alt="Sponsor 2">
+    <div class="sponsor-logos">
+      <img src="./sponsor/LogoTavoloPerLaPace.png" alt="Tavolo per la Pace">
+      <img src="./sponsor/RossiDiCastelPetrosa.png" alt="Rossi di Castel Petrosa">
+      <img src="./sponsor/LogoANPI.png" alt="ANPI Pianoro">
+      <img src="./sponsor/LogoSPI.png" alt="CGIL SPI Pianoro">
+      <img src="./sponsor/ProLoco.jpeg" alt="ProLoco Pianoro">
+      <img src="./sponsor/Regione.png" alt="Regione e enti locali">
+    </div>
   </footer>
 
   <script>
