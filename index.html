@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Note Libere - Concerto 24 Aprile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: white;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      color: white;
+      background: black;
+      padding: 3rem 1rem;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('images/500130ec-9e53-4a56-a604-a0195c979fa1.jpeg') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    header .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: #ccc;
+    }
+
+    .countdown {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .countdown-box {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 1rem 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .countdown-box p:first-child {
+      font-weight: 600;
+      color: #555;
+    }
+
+    .countdown-box p:last-child {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #1f7a1f;
+      margin-top: 0.25rem;
+    }
+
+    .section {
+      padding: 1rem;
+    }
+
+    .volantino img {
+      width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .video-box {
+      display: block;
+      line-height: 0; /* elimina spazi causati dal line-height */
+      overflow: hidden;
+    }
+
+    .video-box video {
+      display: block; /* elimina lo spazio sotto causato dal comportamento inline */
+      margin: 0;
+      padding: 0;
+    }
+    .reel {
+      margin-top: 1rem;
+      border: 4px solid #ec4899;
+      border-radius: 2rem;
+      overflow: hidden;
+      position: relative;
+      padding: 0;
+    }
+
+    .reel video {
+      width: 100%;
+      height: 95vh;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .reel::before {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #ec4899;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 999px;
+    }
+
+    .info {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-icon {
+      font-size: 1.5rem;
+      color: #1f7a1f;
+      min-width: 2rem;
+    }
+
+    .info-content p {
+      margin: 0.1rem 0;
+    }
+
+    .info-content a {
+      color: #1f7a1f;
+      text-decoration: underline;
+    }
+
+    .sponsor {
+      background: #fefcf3;
+      padding: 2rem 1rem;
+      border-top: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .sponsor img {
+      height: 40px;
+      margin: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="content">
+      <h1>Note Libere</h1>
+      <p>Concerto gratuito per la liberazione</p>
+      <p>24 Aprile 2025 - Ore 18:30</p>
+    </div>
+  </header>
+
+  <section class="countdown">
+    <div class="countdown-box">
+      <p>Mancano:</p>
+      <p id="countdown-timer">Caricamento...</p>
+    </div>
+  </section>
+
+  <section class="section volantino">
+    <img src="images/volantino.jpeg" alt="Volantino Note Libere">
+  </section>
+
+  <section class="section">
+    <div class="reel">
+        <div class="video-box">
+            <video src="media/berna-dj.mp4" autoplay muted playsinline loop controls></video>
+        </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="info">
+      <div class="info-icon">📍</div>
+      <div class="info-content">
+        <p><strong>Parco del Ginepreto, c/o Sala Teatro Arcipelago</strong></p>
+        <p>Via della Resistenza 201, Pianoro (BO)</p>
+        <a href="https://www.google.com/maps?q=Via+della+Resistenza+201,+Pianoro" target="_blank">Apri su Google Maps</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-icon">🎶</div>
+      <div class="info-content">
+        <ul>
+          <li>Lorenzo Minarini & Band</li>
+          <li>BBB - Bologna Bridge Band</li>
+          <li>Berna DJ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="info-icon">🍝</div>
+      <div class="info-content">
+        <p>Pastasciutta Antifascista | Crescentine | BAR</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sponsor">
+    <p>Con il supporto di:</p>
+    <img src="sponsor/logo1.png" alt="Sponsor 1">
+    <img src="sponsor/logo2.png" alt="Sponsor 2">
+  </footer>
+
+  <script>
+    const countdown = document.getElementById("countdown-timer");
+    const eventDate = new Date("2025-04-24T18:30:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = eventDate - now;
+
+      if (diff <= 0) {
+        countdown.textContent = "L'evento è in corso!";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      countdown.textContent = `${days}g ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
